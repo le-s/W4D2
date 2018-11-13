@@ -18,6 +18,7 @@ class Cat < ApplicationRecord
   
   validates :birth_date, :color, :name, :sex, :description, presence: true
   validates :color, inclusion: { in: COLORS, message: "Not a valid color" } 
+  validates :sex, inclusion: { in: %w(F M), message: "Please choose F or M" }
   
   def age
     # debugger
