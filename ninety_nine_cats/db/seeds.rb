@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+cats = []
+
+10.times do
+  cats << Cat.create(name: Faker::Name.name, birth_date: Faker::Date.backward(2000), color: Cat::COLORS.sample, sex: %w(M F).sample, description: Faker::ChuckNorris.fact)
+end 
